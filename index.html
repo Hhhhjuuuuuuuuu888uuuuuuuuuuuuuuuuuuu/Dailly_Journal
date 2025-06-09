@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="styles .css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Daily Journal</h1>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Form for creating && editing entries -->
+        <section class="entry-form">
+            <h2 id="form-title">New Journal Entry</h2>
+            <form id="journal-form">
+                <input type="hidden" id="entry-id" value="">
+                
+                <div class="form-group">
+                    <label for="entry-title">Title</label>
+                    <input type="text" id="entry-title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="entry-date">Date</label>
+                    <input type="date" id="entry-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="entry-content">Content</label>
+                    <textarea id="entry-content" required></textarea>
+                </div>
+                
+                <button type="submit" id="submit-btn">Save Entry</button>
+                <button type="button" id="cancel-btn" class="hidden">Cancel</button>
+            </form>
+        </section>
+        
+        <!-- List of journal entries -->
+        <section class="entries-list">
+            <h2>Your Journal Entries</h2>
+            <div id="entries-container">
+                <!-- Sample entry - would be dynamically generated in a real app -->
+                <div class="entry" data-id="1">
+                    <h3>My First Journal Entry</h3>
+                    <div class="entry-date">May 15, 2023</div>
+                    <div class="entry-content">
+                        <p>Today was a great day! I started working on my new journal app and made significant progress. The weather was beautiful, and I had a lovely walk in the park.</p>
+                    </div>
+                    <div class="entry-actions">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+                
+                <!-- This area would be populated with entries from the database -->
+                <div id="no-entries-message" class="hidden">
+                    <p>No journal entries yet. Create your first entry above!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
